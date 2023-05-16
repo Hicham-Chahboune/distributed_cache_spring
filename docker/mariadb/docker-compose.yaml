@@ -1,0 +1,20 @@
+version: '3'
+
+volumes:
+  mariadb:
+    driver: local
+services:
+  mariadb:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_USER:  hicham 
+      MYSQL_PASSWORD: 1234
+    expose:
+        - "3306"
+    ports:
+        - "3306:3306"
+    volumes:
+     - mariadb:/var/lib/mysql
+              
